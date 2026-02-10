@@ -1,0 +1,143 @@
+{
+  "profile": {
+    "name": "Mayar Kabaja",
+    "jobTitle": "Software Engineer",
+    "contact": {
+      "email": "kabajamayar@gmail.com",
+      "phone": "+(970) 56 735 9920"
+    },
+    "links": {
+      "github": "https://github.com/mayar-kabaja",
+      "linkedin": "https://www.linkedin.com/in/mayar-kabaja-3a8301237/"
+    }
+  },
+  "experience": [
+    {
+      "role": "Freelance Fullstack-End Developer",
+      "titleNote": "Software Engineer",
+      "dates": "Jan 2025 - Present",
+      "location": null,
+      "description": "Specializing in full-stack development, optimizing RESTful APIs and microservices. Experience with Shopify integrations (Liquid themes), dashboard enhancements, Node.js, Express.js, PostgreSQL for scalable solutions, collaborating with frontend/backend teams, secure authentication/authorization, and deploying with Docker on AWS and Render."
+    },
+    {
+      "role": "Backend Engineer",
+      "company": "AZAI",
+      "dates": "June 2023 - Present",
+      "location": "Gaza City",
+      "description": "Developed and deployed an online portal for a furniture store in Palestine. Served as Backend lead using Node.js (ExpressJS) and deployed on Render. Handled System & DB Design with performance optimization & security. Collaborated with front-end developers."
+    },
+    {
+      "role": "Frontend Engineer",
+      "company": "Dash.ps",
+      "dates": "June 2022 - Jan 2023",
+      "location": "Gaza City",
+      "description": "Engineered and deployed robust server-side applications leveraging Node.js, Express, & NestJS within an AWS ECS environment."
+    }
+  ],
+  "projects": [
+    {
+      "name": "Code Reviewer AI",
+      "url": "https://code-reviewer-ai-9306.onrender.com/",
+      "description": "AI-powered code review tool. Deployed on Render."
+    },
+    {
+      "name": "Voice Notes AI",
+      "url": "https://voice-notes-ai-1.onrender.com/",
+      "description": "AI voice notes application. Deployed on Render."
+    },
+    {
+      "name": "PythonAnywhere",
+      "url": "https://mayarkabaja.pythonanywhere.com/",
+      "description": "Personal projects and demos hosted on PythonAnywhere."
+    },
+    {
+      "name": "SellAbroad",
+      "url": "https://sellabroad.com/",
+      "role": "Fullstack Developer",
+      "description": "Global e-commerce platform helping brands sell internationally. Worked as fullstack developer on localization of payments, shipping, storefronts, and Shopify integrations — enabling brands to 10X global revenue with local payments, DDP checkout, and multi-language storefronts."
+    },
+    {
+      "name": "UniHome",
+      "url": "https://azai-front-end.vercel.app/",
+      "company": "AZAI",
+      "description": "UniHome is a modern real estate platform that helps users discover unique homes and properties through a clean and user-friendly experience, making it easy to explore, connect, and find the perfect place to live."
+    },
+    {
+      "name": "Boka Business",
+      "url": "https://www.boka.com/",
+      "dates": "June 2022 - Jan 2023",
+      "location": "United States (Remote)",
+      "description": "A multi-vendor marketplace for beauty/wellness businesses. Facilitated appointment booking, payments, reviews, scheduling, and implemented chats with sockets, pagination, and organization."
+    },
+    {
+      "name": "Casting Arabia",
+      "url": "https://www.castingarabia.com/",
+      "dates": "June 2022 - Jan 2023",
+      "location": "United States (Remote)",
+      "description": "A platform connecting talents with casting directors. Primary Developer, following agile principles and building reusable components with clean code."
+    }
+  ],
+  "education": [
+    {
+      "degree": "B.Sc in Computer Engineering",
+      "institution": "Al-Azhar University Gaza",
+      "graduationYear": 2026,
+      "location": null
+    },
+    {
+      "program": "Gaza Sky Geeks - Code Academy",
+      "dates": "Jan 2022 - June 2022",
+      "location": "Gaza City (On-site)",
+      "description": "Six-month full-time boot camp focused on web development using JavaScript, backend, and frontend frameworks, alongside improving soft skills. Building full-stack web applications with JavaScript/TypeScript, processing/analyzing/rendering data visually, and supporting/leading teams."
+    }
+  ],
+  "skills": {
+    "frontEnd": [
+      "HTML5", "CSS3", "JavaScript", "TypeScript",
+      "React", "Next.js", "Redux", "React Query",
+      "Tailwind CSS", "SASS/SCSS", "Styled Components", "CSS-in-JS",
+      "Responsive Design", "Mobile-First", "Accessibility (a11y)",
+      "DOM Manipulation", "REST APIs", "GraphQL", "WebSockets",
+      "Vite", "Webpack", "ESLint", "Prettier",
+      "Figma", "UI/UX basics", "Component Libraries", "Design Systems"
+    ],
+    "aiSkills": [
+      "LLM Integration", "OpenAI API", "Prompt Engineering",
+      "AI Code Review", "Voice/Speech APIs", "Natural Language Processing (NLP)",
+      "AI-Powered Features", "Chatbots", "AI Assistants",
+      "Python (AI/ML)", "Data Processing", "API Integration for AI"
+    ],
+    "programmingLanguages": [
+      "JavaScript", "TypeScript", "Node.js", "Python",
+      "SQL", "HTML5", "CSS3"
+    ],
+    "backend": [
+      "Node.js", "Express", "NestJS", "REST APIs", "GraphQL",
+      "PostgreSQL", "MySQL", "MongoDB", "Mongoose", "Sequelize",
+      "Socket.io", "gRPC", "SOAP", "Swagger", "Postman",
+      "Authentication (JWT, OAuth)", "Authorization", "Security"
+    ],
+    "frameworks": [
+      "React", "Next.js", "NestJS", "Express", "Serverless",
+      "Nodemailer", "Sequelize", "Socket.io"
+    ],
+    "cloud": [
+      "AWS", "Lambda", "EC2", "S3", "RDS", "DynamoDB",
+      "SQS", "SNS", "Cloud ElasticSearch",
+      "Render", "Vercel", "Docker", "Docker Compose"
+    ],
+    "tools": [
+      "Git", "Github", "Gitlab", "Jira", "VS Code",
+      "Linux", "Bash", "npm", "yarn", "pnpm"
+    ],
+    "practices": [
+      "Agile", "Scrum", "CI/CD", "DevOps",
+      "Code Review", "Clean Code", "Testing", "Documentation"
+    ],
+    "additional": [
+      "Shopify", "Liquid", "Microservices", "Performance Optimization",
+      "Database Design", "System Design", "API Design"
+    ],
+    "notes": "Strong focus on front-end development and AI. Has additional AI projects and front-end skills beyond those listed here."
+  }
+}

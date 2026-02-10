@@ -30,8 +30,7 @@ pnpm-debug.log*
 # Misc
 *.pem
 
-# Personal / CV data (optional: remove if you want to commit db_store)
-db_store.json
+# Personal / CV data - db_store.json is committed for deployment
 
 
 backend/venv/
