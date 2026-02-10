@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getCvData, type CvData } from '@/utils/api';
+import QuickQuestions from './QuickQuestions';
 
 const PILL_TYPES = ['blue', 'green', 'purple', 'orange'] as const;
 
@@ -58,10 +59,11 @@ function buildSkillPills(skills: CvData['skills']): { label: string; type: (type
 }
 
 interface SidebarProps {
+  onAskQuestion?: (question: string) => void;
   disabled?: boolean;
 }
 
-export default function Sidebar({ disabled = false }: SidebarProps) {
+export default function Sidebar({ onAskQuestion, disabled = false }: SidebarProps) {
   const [cv, setCv] = useState<CvData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -76,8 +78,22 @@ export default function Sidebar({ disabled = false }: SidebarProps) {
   if (error) {
     return (
       <aside className="sidebar">
-        <div className="profile">
-          <div className="profile-name" style={{ color: '#f87171' }}>{error}</div>
+        <div className="profile sidebar-error">
+          <div className="profile-name sidebar-error-msg">{error}</div>
+          <button
+            type="button"
+            className="sidebar-retry"
+            onClick={() => {
+              setError(null);
+              setLoading(true);
+              getCvData()
+                .then(setCv)
+                .catch((e) => setError(e instanceof Error ? e.message : 'Unable to load. Please try again.'))
+                .finally(() => setLoading(false));
+            }}
+          >
+            Try again
+          </button>
         </div>
       </aside>
     );
@@ -120,6 +136,10 @@ export default function Sidebar({ disabled = false }: SidebarProps) {
         </div>
       </div>
 
+      <QuickQuestions
+        onSelect={onAskQuestion ?? (() => {})}
+        disabled={disabled}
+      />
       <div className="contact-bar">
         {github ? (
           <a href={github} target="_blank" rel="noopener noreferrer" className="soc">

@@ -57,8 +57,8 @@ export default function Home() {
       setMessages((prev) => [...prev, { role: 'ai', content: text, timestamp: Date.now() }]);
       playReceiveSound();
     } catch (err) {
-      const errorMessage = err instanceof Error ? err.message : 'Something went wrong.';
-      setMessages((prev) => [...prev, { role: 'ai', content: `Sorry, I couldn't answer that: ${errorMessage}`, timestamp: Date.now() }]);
+      const errorMessage = err instanceof Error ? err.message : 'Something went wrong. Please try again.';
+      setMessages((prev) => [...prev, { role: 'ai', content: `Sorry — ${errorMessage}`, timestamp: Date.now() }]);
       playReceiveSound();
     } finally {
       setLoading(false);
@@ -107,7 +107,7 @@ export default function Home() {
         <meta name="twitter:image" content={ogImageUrl} />
       </Head>
       <div className="app">
-        <Sidebar disabled={loading} />
+        <Sidebar onAskQuestion={sendQuestion} disabled={loading} />
 
         <main className="chat-area">
           <header className="topbar">

@@ -202,6 +202,37 @@ body::before {
   margin-top: 10px;
 }
 
+/* Sidebar error state */
+.sidebar-error {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.sidebar-error-msg {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fbbf24;
+  white-space: normal;
+  line-height: 1.5;
+}
+.sidebar-retry {
+  align-self: flex-start;
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  background: rgba(79, 142, 255, 0.1);
+  border: 1px solid rgba(79, 142, 255, 0.3);
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s, border-color 0.2s;
+}
+.sidebar-retry:hover {
+  background: rgba(79, 142, 255, 0.18);
+  border-color: rgba(79, 142, 255, 0.5);
+}
+
 .skills-wrap {
   display: flex;
   flex-wrap: wrap;
@@ -842,7 +873,7 @@ body::before {
 }
 
 .chat-flags {
-  display: flex;
+  display: none; /* Shown only on mobile */
   flex-wrap: wrap;
   gap: 6px;
   padding: 10px 28px 8px;
@@ -1041,8 +1072,11 @@ body::before {
     flex-shrink: 0;
   }
 
-  .qq-section {
-    padding: 12px 12px 10px;
+  .sidebar .qq-section {
+    display: none; /* Quick questions move to flags on mobile */
+  }
+  .chat-flags {
+    display: flex;
   }
   .qq-grid {
     grid-template-columns: 1fr 1fr;
