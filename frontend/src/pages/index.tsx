@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Sidebar from '@/components/Sidebar';
 import MessageContent from '@/components/MessageContent';
 import { askQuestion } from '@/utils/api';
-import { isSoundEnabled, setSoundEnabled, playSendSound, playReceiveSound } from '@/utils/sounds';
+import { playSendSound, playReceiveSound } from '@/utils/sounds';
 
 const INITIAL_AI_MESSAGE =
   "Hi! I'm Mayar's AI assistant. Ask me anything about his experience, projects, skills, education, or how to get in touch.";
@@ -25,13 +25,8 @@ export default function Home() {
   ]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
-  const [soundOn, setSoundOn] = useState(true);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
-
-  useEffect(() => {
-    setSoundOn(isSoundEnabled());
-  }, []);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -77,7 +72,7 @@ export default function Home() {
     }
   };
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://mayar-kabaja.vercel.app';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://personal-ai-cv.onrender.com';
   const ogImageUrl = `${siteUrl}/og-image.png`;
 
   const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -97,50 +92,37 @@ export default function Home() {
         <meta property="og:title" content="Mayar Kabaja — AI CV Assistant" />
         <meta property="og:description" content="Chat with Mayar's AI assistant. Ask about his experience, projects, skills, and education." />
         <meta property="og:type" content="website" />
+        <meta property="og:url" content={siteUrl} />
         <meta property="og:image" content={ogImageUrl} />
+        <meta property="og:image:url" content={ogImageUrl} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:alt" content="Mayar Kabaja — AI CV Assistant" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Mayar Kabaja — AI CV Assistant" />
         <meta name="twitter:description" content="Chat with Mayar's AI assistant. Ask about his experience, projects, skills, and education." />
         <meta name="twitter:image" content={ogImageUrl} />
       </Head>
       <div className="app">
+        <div className="ambient-glow" aria-hidden="true" />
         <Sidebar onAskQuestion={sendQuestion} disabled={loading} />
 
         <main className="chat-area">
-          <header className="topbar">
-            <div className="topbar-left">
-              <div className="ai-avatar">🤖</div>
-              <div>
-                <div className="topbar-name">Mayar&apos;s AI CV Assistant</div>
-                <div className="topbar-sub">Ask about experience, projects, skills</div>
-              </div>
+          <header className="topbar ai-card">
+            <div className="ai-card-icon" aria-hidden="true">🤖</div>
+            <div className="ai-card-text">
+              <div className="topbar-name">Mayar&apos;s AI CV Assistant</div>
+              <div className="topbar-sub">Ask about experience, projects, skills</div>
             </div>
-            <div className="topbar-right">
-              <button
-                type="button"
-                className="sound-btn"
-                onClick={() => {
-                  const next = !soundOn;
-                  setSoundEnabled(next);
-                  setSoundOn(next);
-                }}
-                aria-label={soundOn ? 'Mute sounds' : 'Unmute sounds'}
-                title={soundOn ? 'Sound on (click to mute)' : 'Sound off (click to unmute)'}
-              >
-                {soundOn ? '🔊' : '🔇'}
-              </button>
-              <div className="live-badge">
-                <span className="live-dot" />
-                AI Online
-              </div>
+            <div className="live-badge">
+              <span className="live-dot" aria-hidden="true" />
+              <span>Online</span>
             </div>
           </header>
 
           <div className="messages">
-            <div className="welcome">
+            <div className="welcome welcome-desktop">
               <span className="welcome-icon">✦</span>
               <div className="welcome-title">
                 Mayar Kabaja — <span>AI CV Assistant</span>
@@ -149,8 +131,16 @@ export default function Home() {
                 Ask about his experience, projects, skills, education, or how to contact him.
               </div>
             </div>
+            <div className="welcome welcome-mobile">
+              <div className="welcome-dot" />
+              <span className="welcome-text">Mayar Kabaja — <span className="welcome-accent">AI CV Assistant</span></span>
+            </div>
 
-            <div className="divider">start of conversation</div>
+            <div className="divider">
+              <div className="divider-line" />
+              <span className="divider-text">Start of conversation</span>
+              <div className="divider-line" />
+            </div>
 
             {messages.map((msg, i) => (
               <div

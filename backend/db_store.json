@@ -138,6 +138,11 @@
       "Shopify", "Liquid", "Microservices", "Performance Optimization",
       "Database Design", "System Design", "API Design"
     ],
+    "important": [
+      "Node.js", "NestJS",   "React", "TypeScript", "JavaScript", "Next.js",
+    "PostgreSQL", "REST APIs", "GraphQL", "Express",
+      "AWS", "Docker", "Git", "MongoDB"
+    ],
     "notes": "Strong focus on front-end development and AI. Has additional AI projects and front-end skills beyond those listed here."
   }
 }

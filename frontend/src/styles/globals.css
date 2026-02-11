@@ -27,9 +27,9 @@
 html,
 body {
   height: 100%;
-  background: var(--bg);
+  background: #080b10;
   color: var(--text);
-  font-family: 'Google Sans', system-ui, sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: 16px;
   line-height: 1.6;
   letter-spacing: 0.01em;
@@ -50,6 +50,19 @@ body::before {
     linear-gradient(90deg, rgba(79, 142, 255, 0.03) 1px, transparent 1px);
   background-size: 40px 40px;
   pointer-events: none;
+}
+
+/* Ambient glow at top center */
+.ambient-glow {
+  position: fixed;
+  top: -120px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  height: 300px;
+  background: radial-gradient(ellipse, rgba(79, 156, 249, 0.07) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
 }
 
 #__next {
@@ -127,8 +140,9 @@ body::before {
   width: 52px;
   height: 52px;
   flex-shrink: 0;
-  border-radius: 14px;
+  border-radius: 16px;
   background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+  box-shadow: 0 0 0 1px rgba(79, 156, 249, 0.25), 0 8px 24px rgba(0, 0, 0, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -175,8 +189,9 @@ body::before {
 }
 
 .profile-name {
-  font-size: 18px;
-  font-weight: 800;
+  font-family: 'Syne', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
   color: #fff;
   letter-spacing: -0.5px;
   white-space: nowrap;
@@ -471,6 +486,64 @@ body::before {
   }
 }
 
+/* AI Assistant card: single horizontal row (icon | title+subtitle | Online badge) */
+.topbar.ai-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: linear-gradient(135deg, rgba(79, 156, 249, 0.06), rgba(79, 156, 249, 0.03));
+  border: 1px solid rgba(79, 156, 249, 0.18);
+  border-radius: 14px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+  animation: topbarIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+}
+.ai-card-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 11px;
+  background: linear-gradient(135deg, #1a3a5c, #0f2a47);
+  border: 1px solid rgba(79, 156, 249, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.ai-card-text {
+  flex: 1;
+  min-width: 0;
+}
+.topbar.ai-card .topbar-name {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #eef2f7;
+}
+.topbar.ai-card .topbar-sub {
+  font-size: 11.5px;
+  color: #4d5a6a;
+}
+.topbar.ai-card .live-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background: rgba(34, 197, 94, 0.15);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  font-size: 11px;
+  font-weight: 500;
+  color: #22c55e;
+  flex-shrink: 0;
+}
+.topbar.ai-card .live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+}
+
 .topbar {
   padding: 14px 28px;
   border-bottom: 1px solid var(--border);
@@ -621,6 +694,9 @@ body::before {
   border-radius: 18px;
   animation: floatIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
+.welcome-mobile {
+  display: none;
+}
 
 @keyframes floatIn {
   from {
@@ -672,21 +748,22 @@ body::before {
 .divider {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 10px;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: 600;
+  gap: 12px;
+  padding: 0 24px;
+  margin: 12px 0;
   animation: dividerIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
 }
-
-.divider::before,
-.divider::after {
-  content: '';
+.divider-line {
   flex: 1;
   height: 1px;
-  background: var(--border);
+  background: rgba(255, 255, 255, 0.06);
+}
+.divider-text {
+  font-size: 10px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #4d5a6a;
+  font-weight: 500;
 }
 
 @keyframes dividerIn {
@@ -826,6 +903,10 @@ body::before {
   padding: 0 3px;
 }
 
+.msg-ts {
+  display: none; /* Shown only on mobile */
+}
+
 .typing-bubble {
   padding: 11px 16px;
   background: var(--bubble-ai);
@@ -900,6 +981,15 @@ body::before {
   border-color: rgba(79, 142, 255, 0.4);
   background: rgba(79, 142, 255, 0.08);
   color: var(--text);
+}
+
+.chat-flag:active:not(:disabled),
+.chat-flag:focus {
+  background: var(--card);
+  outline: none;
+}
+.chat-flag:active:not(:disabled):hover {
+  background: rgba(79, 142, 255, 0.08);
 }
 
 .chat-flag:disabled {
@@ -1011,6 +1101,13 @@ body::before {
 }
 
 @media (max-width: 860px) {
+  .profile-name,
+  .profile-role,
+  .section-label,
+  .topbar-name {
+    font-family: 'Syne', system-ui, sans-serif;
+  }
+
   .app {
     display: flex;
     flex-direction: column;
@@ -1035,27 +1132,48 @@ body::before {
   .sidebar .avatar-row {
     margin-bottom: 8px;
   }
+  /* Problem 1 — Avatar: rounded square (not circle) */
   .sidebar .avatar {
     width: 40px;
     height: 40px;
     font-size: 16px;
+    border-radius: 16px !important;
+    box-shadow: 0 0 0 1px rgba(79, 156, 249, 0.25), 0 8px 24px rgba(0, 0, 0, 0.4);
   }
+  .msg-av.ai {
+    border-radius: 16px;
+  }
+  .sidebar .avatar::after {
+    bottom: 2px;
+    right: 2px;
+    width: 10px;
+    height: 10px;
+    border-width: 2px;
+  }
+  /* Problem 6 — Name size */
   .sidebar .profile-name {
-    font-size: 15px;
+    font-size: 22px;
+    font-weight: 700;
+    font-family: 'Syne', sans-serif;
+    letter-spacing: -0.3px;
+    line-height: 1.1;
   }
   .sidebar .profile-role {
-    font-size: 10px;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: #4f9cf9;
+    text-transform: uppercase;
   }
   .sidebar .profile-loc {
     font-size: 11px;
     margin-top: 4px;
   }
   .sidebar .skills-wrap {
-    margin-top: 8px;
+    margin-top: 6px;
     flex-wrap: nowrap;
     overflow-x: auto;
     overflow-y: hidden;
-    gap: 6px;
+    gap: 4px;
     padding-bottom: 4px;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
@@ -1063,13 +1181,41 @@ body::before {
   .sidebar .skills-wrap::-webkit-scrollbar {
     display: none;
   }
-  .sidebar .pill {
+  /* Skill tags: smaller on mobile */
+  .sidebar .pill,
+  .sidebar .pill.blue,
+  .sidebar .pill.purple,
+  .sidebar .pill.green,
+  .sidebar .pill.orange {
     flex-shrink: 0;
     white-space: nowrap;
+    background: rgba(79, 156, 249, 0.08);
+    border: 1px solid rgba(79, 156, 249, 0.2);
+    border-radius: 6px;
+    color: #4f9cf9;
+    padding: 4px 8px;
+    font-size: 10px;
+    font-weight: 500;
+  }
+  .sidebar .pill:hover {
+    background: rgba(79, 156, 249, 0.14);
   }
   .sidebar .contact-bar {
     padding: 10px 16px;
     flex-shrink: 0;
+  }
+  /* Step 5 — Social buttons: equal width, dark surface, hover border/text */
+  .sidebar .contact-bar .soc {
+    flex: 1;
+    background: #0e1318;
+    border-color: rgba(255, 255, 255, 0.06);
+    color: #8a96a8;
+  }
+  .sidebar .contact-bar .soc:hover {
+    border-color: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    background: #0e1318;
+    transform: none;
   }
 
   .sidebar .qq-section {
@@ -1110,23 +1256,17 @@ body::before {
     min-height: 0;
     overflow: hidden;
   }
-  .topbar {
-    padding: 10px 16px;
-    flex-wrap: wrap;
-    gap: 6px;
-    flex-shrink: 0;
+  /* AI card: add margin on mobile */
+  .topbar.ai-card {
+    margin: 10px 16px 10px;
   }
-  .topbar-left {
-    min-width: 0;
+  .topbar.ai-card .live-dot {
+    animation: mobile-pulse-dot 1.4s ease-in-out infinite;
   }
-  .topbar-name {
-    font-size: 13px;
-  }
-  .topbar-sub {
-    font-size: 10.5px;
-  }
-  .topbar-right {
-    gap: 8px;
+  @keyframes mobile-pulse-dot {
+    0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.5); }
+    50% { opacity: 0.7; transform: scale(1.1); }
+    70% { box-shadow: 0 0 0 6px rgba(34, 197, 94, 0); }
   }
 
   .messages {
@@ -1134,80 +1274,175 @@ body::before {
     min-height: 0;
     overflow-y: auto;
     overflow-x: hidden;
-    padding: 12px 16px 200px;
+    padding: 12px 16px 160px;
     gap: 14px;
     -webkit-overflow-scrolling: touch;
   }
-  .welcome {
-    display: flex;
+  /* Problem 3 — Replace card with simple header row (blue dot + text) */
+  .welcome-desktop {
+    display: none !important;
+  }
+  .welcome-mobile {
+    display: flex !important;
     align-items: center;
     gap: 10px;
-    padding: 10px 14px;
+    padding: 16px 24px 12px;
+    background: none;
+    border: none;
+    border-radius: 0;
     text-align: left;
-    min-height: 48px;
-    border-radius: 12px;
+    animation: none;
   }
-  .welcome-icon {
-    font-size: 20px;
-    margin-bottom: 0;
+  .welcome-mobile .welcome-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #4f9cf9;
+    box-shadow: 0 0 8px #4f9cf9;
     flex-shrink: 0;
   }
-  .welcome-title {
-    font-size: 14px;
-    margin-bottom: 0;
-    flex: 1;
-    min-width: 0;
+  .welcome-mobile .welcome-text {
+    font-family: 'Syne', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    color: #8a96a8;
   }
-  .welcome-desc {
-    display: none;
+  .welcome-mobile .welcome-accent {
+    color: #4f9cf9;
   }
+  /* Problem 4 — Divider margin */
   .divider {
-    font-size: 9px;
+    margin: 4px 0 16px 0;
+  }
+  /* Problem 5 — Chat bubble: top-left 4px (sharp), others 14px */
+  .msg.ai .bubble {
+    background: #0e1318;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 4px 14px 14px 14px;
+    padding: 14px 16px;
+  }
+
+  /* User message bubble + timestamp */
+  .msg.user .bubble {
+    background: #0e1318;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 4px 14px 14px 14px;
+  }
+  .msg-ts {
+    display: block;
+    font-size: 10px;
+    color: #4d5a6a;
+    margin-top: 4px;
+    padding: 0 2px;
   }
 
   .msg-body {
     max-width: 92%;
   }
 
+  /* Compact bottom bar so send button stays visible on short screens (no height increase) */
   .chat-bottom-bar {
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
     z-index: 100;
-    padding-bottom: max(16px, env(safe-area-inset-bottom));
-    background: rgba(7, 8, 12, 0.98);
-    backdrop-filter: blur(16px);
-    border-top: 1px solid var(--border);
+    padding-bottom: max(10px, env(safe-area-inset-bottom));
+    background: transparent;
+    backdrop-filter: none;
+    border-top: none;
   }
+  /* Quick questions: tighter padding, clear gap above input */
   .chat-flags {
     display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    overflow-y: hidden;
     gap: 6px;
-    padding: 8px 16px 6px;
-    -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+    padding: 8px 24px 10px;
     scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    flex-wrap: nowrap;
+    overflow-y: hidden;
   }
   .chat-flags::-webkit-scrollbar {
     display: none;
   }
   .chat-flag {
     flex-shrink: 0;
-    padding: 6px 12px;
-    font-size: 11px;
     white-space: nowrap;
+    padding: 4px 10px;
+    border-radius: 16px;
+    background: #0e1318;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    font-size: 11px;
+    font-weight: 500;
+    color: #8a96a8;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .chat-flag:hover:not(:disabled) {
+    border-color: #4f9cf9;
+    color: #4f9cf9;
+    background: rgba(79, 156, 249, 0.08);
+  }
+  .chat-flag:active:not(:disabled),
+  .chat-flag:focus {
+    background: #0e1318;
+    outline: none;
+  }
+  .chat-flag:active:not(:disabled):hover {
+    background: rgba(79, 156, 249, 0.08);
   }
   .input-zone {
-    padding: 0 16px 14px;
+    padding: 0 24px 10px;
+  }
+  .input-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #0e1318;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    padding: 2px 4px 2px 12px;
+    min-height: 40px;
+  }
+  .input-box:focus-within {
+    border-color: rgba(79, 156, 249, 0.4);
+    box-shadow: 0 0 0 3px rgba(79, 156, 249, 0.06);
+  }
+  .chat-input {
+    flex: 1;
+    min-height: 36px;
+    padding: 8px 0;
+    font-size: 14px;
+    line-height: 1.35;
+    color: #eef2f7;
+    background: transparent;
+    border: none;
+    outline: none;
+    resize: none;
+  }
+  .chat-input::placeholder {
+    color: var(--muted);
+  }
+  .send-btn {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    min-height: 36px;
+    border-radius: 10px;
+    background: #4f9cf9;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .send-btn svg {
+    width: 16px;
+    height: 16px;
   }
   .input-hint {
-    font-size: 9.5px;
-    white-space: normal;
-    line-height: 1.4;
-    padding: 0 4px;
-    word-break: break-word;
+    display: none;
   }
 }
 

@@ -11,13 +11,14 @@ function getInitials(name: string | undefined): string {
   return name.slice(0, 2).toUpperCase();
 }
 
+/* Order: most important first (backend, languages, frameworks, then rest) */
 const SKILL_CATEGORIES: string[] = [
   'backend',
-  'frontEnd',
-  'aiSkills',
   'programmingLanguages',
-  'cloud',
   'frameworks',
+  'frontEnd',
+  'cloud',
+  'aiSkills',
   'tools',
   'practices',
   'additional',
@@ -38,10 +39,41 @@ const SKILL_TYPE_BY_KEY: Record<string, (typeof PILL_TYPES)[number]> = {
 const MAX_PILLS = 24;
 const MAX_PER_CATEGORY = 6;
 
+/** Build a map of skill label -> pill type from category arrays (excluding special keys) */
+function buildSkillTypeMap(skills: Record<string, unknown>): Map<string, (typeof PILL_TYPES)[number]> {
+  const map = new Map<string, (typeof PILL_TYPES)[number]>();
+  for (const key of SKILL_CATEGORIES) {
+    const arr = skills[key];
+    if (!Array.isArray(arr)) continue;
+    const type = SKILL_TYPE_BY_KEY[key] ?? 'blue';
+    for (const s of arr) {
+      const label = String(s).trim();
+      if (label && !map.has(label)) map.set(label, type);
+    }
+  }
+  return map;
+}
+
 function buildSkillPills(skills: CvData['skills']): { label: string; type: (typeof PILL_TYPES)[number] }[] {
   if (!skills || typeof skills !== 'object') return [];
+  const typeMap = buildSkillTypeMap(skills as Record<string, unknown>);
   const seen = new Set<string>();
   const pills: { label: string; type: (typeof PILL_TYPES)[number] }[] = [];
+
+  // Use "important" list first (for mobile: start with most important / mix)
+  const important = skills.important;
+  if (Array.isArray(important)) {
+    for (const s of important) {
+      const label = String(s).trim();
+      if (label && !seen.has(label)) {
+        seen.add(label);
+        pills.push({ label, type: typeMap.get(label) ?? 'blue' });
+        if (pills.length >= MAX_PILLS) return pills;
+      }
+    }
+  }
+
+  // Then fill from categories in order
   for (const key of SKILL_CATEGORIES) {
     const arr = skills[key];
     if (!Array.isArray(arr)) continue;
