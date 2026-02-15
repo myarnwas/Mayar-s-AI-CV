@@ -108,7 +108,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Mayar Kabaja — AI CV Assistant</title>
+        <title>Mayar Waleed Nawas — AI CV Assistant</title>
         <meta name="description" content="Chat with Mayar's AI assistant. Ask about his experience, projects, skills, and education." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -148,7 +148,7 @@ export default function Home() {
             <div className="welcome welcome-desktop">
               <span className="welcome-icon">✦</span>
               <div className="welcome-title">
-                Mayar Kabaja — <span>AI CV Assistant</span>
+                Mayar Waleed Nawas — <span>AI CV Assistant</span>
               </div>
               <div className="welcome-desc">
                 Ask about his experience, projects, skills, education, or how to contact him.

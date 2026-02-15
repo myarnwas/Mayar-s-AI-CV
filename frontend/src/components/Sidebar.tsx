@@ -132,9 +132,9 @@ export default function Sidebar({ onAskQuestion, disabled = false }: SidebarProp
   }
 
   const profile = cv?.profile ?? {};
-  const name = profile.name ?? 'Mayar Kabaja';
-  const jobTitle = profile.jobTitle ?? 'Fullstack Developer';
-  const location = profile.location ?? (cv?.experience?.[0]?.location) ?? 'Palestine';
+  const name = profile.name ?? 'Mayar W. Nawas';
+  const jobTitle = profile.jobTitle ?? 'Software Engineer';
+  const location = profile.location ?? (cv?.experience?.[0]?.location) ?? 'Gaza City';
   const availability = ' · Available for remote';
   const skills = buildSkillPills(cv?.skills);
   const github = profile.links?.github ?? '';

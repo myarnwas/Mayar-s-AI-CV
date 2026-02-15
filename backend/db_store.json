@@ -1,148 +1,152 @@
 {
   "profile": {
-    "name": "Mayar Kabaja",
-    "jobTitle": "Software Engineer",
+    "name": "Mayar Waleed Nawas",
+    "jobTitle": "Software Engineering & AI Student",
     "contact": {
-      "email": "kabajamayar@gmail.com",
-      "phone": "+(970) 56 735 9920"
+      "email": "myarnwas@gmail.com",
+      "phone": "059-732-0596",
+      "location": "An-Nuseirat, Gaza, Palestine"
     },
     "links": {
-      "github": "https://github.com/mayar-kabaja",
-      "linkedin": "https://www.linkedin.com/in/mayar-kabaja-3a8301237/"
+      "github": "https://github.com/myarnwas",
+      "linkedin": "https://www.linkedin.com/in/mayar-waleed-nawas-961241251/",
+      "mostaql": "https://mostaql.com/u/mayar_nawas2004"
     }
   },
+  "summary": "An ambitious and quick-learning Software Engineering student with hands-on experience in developing web, mobile, and AI-based applications. Committed to delivering impactful digital solutions and staying current with modern technologies.",
   "experience": [
     {
-      "role": "Freelance Fullstack-End Developer",
-      "titleNote": "Software Engineer",
-      "dates": "Jan 2025 - Present",
-      "location": null,
-      "description": "Specializing in full-stack development, optimizing RESTful APIs and microservices. Experience with Shopify integrations (Liquid themes), dashboard enhancements, Node.js, Express.js, PostgreSQL for scalable solutions, collaborating with frontend/backend teams, secure authentication/authorization, and deploying with Docker on AWS and Render."
+      "role": "Software Engineering Trainee",
+      "company": "Gaza Sky Geeks – SkillStack Paths (Mercy Corps & Google)",
+      "dates": "Apr 2025 - Aug 2025",
+      "description": "Completed a 60-hour training program focused on Data Structures and Algorithms. Gained practical experience in programming fundamentals, OOP, arrays, linked lists, and core data structures."
     },
     {
-      "role": "Backend Engineer",
-      "company": "AZAI",
-      "dates": "June 2023 - Present",
-      "location": "Gaza City",
-      "description": "Developed and deployed an online portal for a furniture store in Palestine. Served as Backend lead using Node.js (ExpressJS) and deployed on Render. Handled System & DB Design with performance optimization & security. Collaborated with front-end developers."
+      "role": "Virtual Job Simulation",
+      "company": "JPMorgan Chase & Co. – Forage",
+      "dates": "Jul 2025",
+      "description": "Handled project setup, Kafka integration, H2 in-memory database integration, and REST API development. Gained hands-on experience with distributed systems and API design."
     },
     {
-      "role": "Frontend Engineer",
-      "company": "Dash.ps",
-      "dates": "June 2022 - Jan 2023",
-      "location": "Gaza City",
-      "description": "Engineered and deployed robust server-side applications leveraging Node.js, Express, & NestJS within an AWS ECS environment."
+      "role": "Trainee – Freelancing Skills Workshop",
+      "company": "Learn More",
+      "dates": "Aug 2023",
+      "description": "Acquired skills in freelancing, profile optimization, and client communication on platforms like Upwork and Mostaql."
     }
   ],
   "projects": [
     {
-      "name": "Code Reviewer AI",
-      "url": "https://code-reviewer-ai-9306.onrender.com/",
-      "description": "AI-powered code review tool. Deployed on Render."
+      "name": "AI-Powered Chatbot",
+      "techStack": "React.js, ChatGPT, Gemini, and DeepSeek",
+      "date": "Sep 2025",
+      "description": "Developed a functional AI chatbot by integrating multiple models. Focused on API integration and front-end development."
     },
     {
-      "name": "Voice Notes AI",
-      "url": "https://voice-notes-ai-1.onrender.com/",
-      "description": "AI voice notes application. Deployed on Render."
+      "name": "Live E-commerce Shop",
+      "techStack": "ASP.NET Core 8 MVC and SQL",
+      "date": "Jul 2025",
+      "description": "Built a complete e-commerce system with user authentication and a shopping cart. Focused on SQL database integration."
     },
     {
-      "name": "PythonAnywhere",
-      "url": "https://mayarkabaja.pythonanywhere.com/",
-      "description": "Personal projects and demos hosted on PythonAnywhere."
-    },
-    {
-      "name": "SellAbroad",
-      "url": "https://sellabroad.com/",
-      "role": "Fullstack Developer",
-      "description": "Global e-commerce platform helping brands sell internationally. Worked as fullstack developer on localization of payments, shipping, storefronts, and Shopify integrations — enabling brands to 10X global revenue with local payments, DDP checkout, and multi-language storefronts."
-    },
-    {
-      "name": "UniHome",
-      "url": "https://azai-front-end.vercel.app/",
-      "company": "AZAI",
-      "description": "UniHome is a modern real estate platform that helps users discover unique homes and properties through a clean and user-friendly experience, making it easy to explore, connect, and find the perfect place to live."
-    },
-    {
-      "name": "Boka Business",
-      "url": "https://www.boka.com/",
-      "dates": "June 2022 - Jan 2023",
-      "location": "United States (Remote)",
-      "description": "A multi-vendor marketplace for beauty/wellness businesses. Facilitated appointment booking, payments, reviews, scheduling, and implemented chats with sockets, pagination, and organization."
-    },
-    {
-      "name": "Casting Arabia",
-      "url": "https://www.castingarabia.com/",
-      "dates": "June 2022 - Jan 2023",
-      "location": "United States (Remote)",
-      "description": "A platform connecting talents with casting directors. Primary Developer, following agile principles and building reusable components with clean code."
+      "name": "Digital Design for Clients",
+      "role": "Freelance",
+      "dates": "2024-2025",
+      "description": "Created visual content including Photoshop ads for 'Jader' app and professional covers for 'Dr. Aziz Pharmacy'."
     }
   ],
   "education": [
     {
-      "degree": "B.Sc in Computer Engineering",
-      "institution": "Al-Azhar University Gaza",
-      "graduationYear": 2026,
-      "location": null
-    },
-    {
-      "program": "Gaza Sky Geeks - Code Academy",
-      "dates": "Jan 2022 - June 2022",
-      "location": "Gaza City (On-site)",
-      "description": "Six-month full-time boot camp focused on web development using JavaScript, backend, and frontend frameworks, alongside improving soft skills. Building full-stack web applications with JavaScript/TypeScript, processing/analyzing/rendering data visually, and supporting/leading teams."
+      "degree": "B.Sc in Software Engineering & Artificial Intelligence",
+      "institution": "University of Palestine",
+      "graduationYear": 2027,
+      "gpa": "88%",
+      "status": "Fourth-year student"
     }
   ],
   "skills": {
-    "frontEnd": [
-      "HTML5", "CSS3", "JavaScript", "TypeScript",
-      "React", "Next.js", "Redux", "React Query",
-      "Tailwind CSS", "SASS/SCSS", "Styled Components", "CSS-in-JS",
-      "Responsive Design", "Mobile-First", "Accessibility (a11y)",
-      "DOM Manipulation", "REST APIs", "GraphQL", "WebSockets",
-      "Vite", "Webpack", "ESLint", "Prettier",
-      "Figma", "UI/UX basics", "Component Libraries", "Design Systems"
-    ],
-    "aiSkills": [
-      "LLM Integration", "OpenAI API", "Prompt Engineering",
-      "AI Code Review", "Voice/Speech APIs", "Natural Language Processing (NLP)",
-      "AI-Powered Features", "Chatbots", "AI Assistants",
-      "Python (AI/ML)", "Data Processing", "API Integration for AI"
-    ],
-    "programmingLanguages": [
-      "JavaScript", "TypeScript", "Node.js", "Python",
-      "SQL", "HTML5", "CSS3"
-    ],
-    "backend": [
-      "Node.js", "Express", "NestJS", "REST APIs", "GraphQL",
-      "PostgreSQL", "MySQL", "MongoDB", "Mongoose", "Sequelize",
-      "Socket.io", "gRPC", "SOAP", "Swagger", "Postman",
-      "Authentication (JWT, OAuth)", "Authorization", "Security"
-    ],
-    "frameworks": [
-      "React", "Next.js", "NestJS", "Express", "Serverless",
-      "Nodemailer", "Sequelize", "Socket.io"
-    ],
-    "cloud": [
-      "AWS", "Lambda", "EC2", "S3", "RDS", "DynamoDB",
-      "SQS", "SNS", "Cloud ElasticSearch",
-      "Render", "Vercel", "Docker", "Docker Compose"
-    ],
-    "tools": [
-      "Git", "Github", "Gitlab", "Jira", "VS Code",
-      "Linux", "Bash", "npm", "yarn", "pnpm"
-    ],
-    "practices": [
-      "Agile", "Scrum", "CI/CD", "DevOps",
-      "Code Review", "Clean Code", "Testing", "Documentation"
-    ],
-    "additional": [
-      "Shopify", "Liquid", "Microservices", "Performance Optimization",
-      "Database Design", "System Design", "API Design"
-    ],
-    "important": [
-      "Node.js", "NestJS",   "React", "TypeScript", "JavaScript", "Next.js",
-    "PostgreSQL", "REST APIs", "GraphQL", "Express",
-      "AWS", "Docker", "Git", "MongoDB"
-    ],
-    "notes": "Strong focus on front-end development and AI. Has additional AI projects and front-end skills beyond those listed here."
+    "frontEnd": ["React.js", "HTML", "CSS", "WordPress", "JavaScript", "UI/UX Design"],
+    "aiSkills": ["Supervised Machine Learning", "Llama 4", "AI Ethics", "Prompt Engineering", "LLM APIs"],
+    "programmingLanguages": ["Python", "JavaScript", "C++", "C#", "Java", "SQL"],
+    "backend": ["ASP.NET Core", "Node.js", "REST API", "Kafka", "H2 In-Memory", "Entity Framework", "MongoDB"],
+    "mobile": ["Android", "Flutter"],
+    "tools": ["Git & GitHub", "JSON", "Kafka", "Photoshop", "Canva"]
+  },
+  "certifications": [
+    {
+      "title": "Building with Llama 4",
+      "provider": "Meta & DeepLearning.AI",
+      "url": "https://learn.deeplearning.ai/accomplishments/6441c502-dc64-45bb-ba2b-03a0566d124f"
+    },
+    {
+      "title": "Supervised Machine Learning",
+      "provider": "Coursera (Stanford & DeepLearning.AI)",
+      "url": "https://www.coursera.org/account/accomplishments/verify/CHBTCLYY4CL5"
+    },
+    {
+      "title": "Learning Data Analytics: Foundations",
+      "provider": "LinkedIn Learning",
+      "url": "https://www.linkedin.com/learning/certificates/812cf502b9040adf3f4046b99ee3d43be5c1cbccdc61d8eae1d7e0a2b0f83fe4"
+    },
+    {
+      "title": "Fundamental AI Concepts",
+      "provider": "Microsoft",
+      "url": "https://learn.microsoft.com/en-us/users/mayarwaleednawas-2275/achievements/yqf4segr"
+    },
+    {
+      "title": "Blockchain in Java",
+      "provider": "MindLuster",
+      "url": "https://www.mindluster.com/student/certificate/91c9b082"
+    },
+    {
+      "title": "Blockchain Fundamentals",
+      "provider": "Chainlink Labs",
+      "url": "https://www.credly.com/badges/21cb1308-1f29-414c-8236-b49c22978a24/linked_in_profile"
+    },
+    {
+      "title": "Back End Development and APIs",
+      "provider": "freeCodeCamp.org",
+      "url": "https://www.freecodecamp.org/certification/fccbd054e8d-ba58-4e47-bb75-3e1f37b23ad7/back-end-development-and-apis"
+    },
+    {
+      "title": "JavaScript for Beginners",
+      "provider": "Cursa",
+      "url": "https://cursa.app/en/my-certificate/cert3e53ddb000cee04d5b471da536f796ec"
+    },
+    {
+      "title": "Software Development Life Cycle",
+      "provider": "TeraCourses",
+      "url": "https://teracourses.com/ar/certificate/C-1120557"
+    },
+    {
+      "title": "Professional Android Applications",
+      "provider": "MindLuster",
+      "url": "https://www.mindluster.com/student/certificate/f05c05c8"
+    },
+    {
+      "title": "Introduction to Cybersecurity",
+      "provider": "Cisco Networking Academy",
+      "url": "https://www.credly.com/badges/1e9f462a-6de3-4658-bded-d80bd584c269/linked_in_profile"
+    },
+    {
+      "title": "English Certificate (EFSET)",
+      "provider": "EF SET",
+      "url": "https://cert.efset.org/5Y3KyZ"
+    },
+    {
+      "title": "ASP.NET Core foundations",
+      "provider": "Udemy",
+      "url": "https://www.udemy.com/certificate/UC-ba0c8641-0e08-4368-b756-c0c40372d9a9/"
+    }
+  ],
+  "languages": [
+    { "language": "Arabic", "proficiency": "Native" },
+    { "language": "English", "proficiency": "Good Working Proficiency" }
+  ],
+  "activities": {
+    "memberships": ["IEEE Member"],
+    "competitions": [
+      "Ramadan Clash Competition (IEEE An-Najah)",
+      "10-Day Ramadan Coding Marathon (IEEE AAUP)"
+    ]
   }
 }
