@@ -2,29 +2,30 @@
 # Set env vars in the dashboard: GROQ_API_KEY, CORS_ORIGINS (backend), NEXT_PUBLIC_API_URL, NEXT_PUBLIC_SITE_URL (frontend).
 
 services:
+  # --- Backend Service (FastAPI) ---
   - type: web
     name: personal-ai-cv-api
-    runtime: python
-    plan: free
-    rootDir: backend
-    buildCommand: pip install -r requirements.txt
-    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
-    healthCheckPath: /health
+    env: python
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: python -m uvicorn backend.main:app --host 0.0.0.0 --port 8001
     envVars:
       - key: GROQ_API_KEY
-        sync: false
+        sync: false # ستدخلين القيمة يدوياً في Render
       - key: CORS_ORIGINS
-        sync: false
+        fromService:
+          type: web
+          name: personal-ai-cv-web
+          property: host
 
+  # --- Frontend Service (Next.js) ---
   - type: web
     name: personal-ai-cv-web
-    runtime: node
-    plan: free
-    rootDir: frontend
-    buildCommand: npm install && npm run build
-    startCommand: npm start
+    env: node
+    buildCommand: cd frontend && npm install && npm run build
+    startCommand: cd frontend && npm run start
     envVars:
       - key: NEXT_PUBLIC_API_URL
-        sync: false
-      - key: NEXT_PUBLIC_SITE_URL
-        sync: false
+        fromService:
+          type: web
+          name: personal-ai-cv-api
+          property: url
