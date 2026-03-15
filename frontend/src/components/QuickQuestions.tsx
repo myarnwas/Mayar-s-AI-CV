@@ -9,6 +9,8 @@ const QQ_ITEMS = [
   { q: "What cloud technologies does Mayar know?", icon: '☁️', iconClass: 'o', text: 'Cloud & DevOps' },
   { q: 'Why should I hire Mayar?', icon: '🌟', iconClass: 'g', text: 'Why Hire Me?' },
   { q: 'How can I contact Mayar?', icon: '📬', iconClass: 'p', text: 'Contact Me' },
+  { q: "What open source contributions has Mayar made?", icon: '🌍', iconClass: 'g', text: 'Open Source' },
+
 ];
 
 interface QuickQuestionsProps {

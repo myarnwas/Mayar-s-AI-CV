@@ -112,7 +112,7 @@ export default function Home() {
         <meta name="description" content="Chat with Mayar's AI assistant. Ask about his experience, projects, skills, and education." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <meta property="og:title" content="Mayar Kabaja — AI CV Assistant" />
+        <meta property="og:title" content="Mayar Nawas — AI CV Assistant" />
         <meta property="og:description" content="Chat with Mayar's AI assistant. Ask about his experience, projects, skills, and education." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={siteUrl} />
@@ -121,9 +121,9 @@ export default function Home() {
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:type" content="image/png" />
-        <meta property="og:image:alt" content="Mayar Kabaja — AI CV Assistant" />
+        <meta property="og:image:alt" content="Mayar Nawas — AI CV Assistant" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Mayar Kabaja — AI CV Assistant" />
+        <meta name="twitter:title" content="Mayar Nawas — AI CV Assistant" />
         <meta name="twitter:description" content="Chat with Mayar's AI assistant. Ask about his experience, projects, skills, and education." />
         <meta name="twitter:image" content={ogImageUrl} />
       </Head>
@@ -156,7 +156,7 @@ export default function Home() {
             </div>
             <div className="welcome welcome-mobile">
               <div className="welcome-dot" />
-              <span className="welcome-text">Mayar Kabaja — <span className="welcome-accent">AI CV Assistant</span></span>
+              <span className="welcome-text">Mayar Nawas — <span className="welcome-accent">AI CV Assistant</span></span>
             </div>
 
             <div className="divider">

@@ -32,6 +32,12 @@
       "company": "Learn More",
       "dates": "Aug 2023",
       "description": "Acquired skills in freelancing, profile optimization, and client communication on platforms like Upwork and Mostaql."
+    },
+    {
+      "role": "Fullstack Development Bootcamp Graduate",
+      "company": "Amana Bootcamp",
+      "dates": "2026",
+      "description": "Completed an intensive Fullstack Development Bootcamp focused on building scalable web applications using modern technologies including Next.js, Express.js, and Tailwind CSS."
     }
   ],
   "projects": [
@@ -52,6 +58,31 @@
       "role": "Freelance",
       "dates": "2024-2025",
       "description": "Created visual content including Photoshop ads for 'Jader' app and professional covers for 'Dr. Aziz Pharmacy'."
+    },
+    {
+    "name": "Smart Inverter Guardian Agent",
+    "url": "https://github.com/myarnwas/Smart-Inverter-Guardian-Agent",
+    "language": "C++",
+    "dates": "Mar 2026",
+    "description": "Developed an intelligent agent that monitors inverter battery levels and triggers alerts to prevent damage and extend battery lifespan."
+    },
+    {
+      "name": "Amana Bookstore API",
+      "techStack": "Express.js, Next.js",
+      "date": "2026",
+      "description": "Built a bookstore API with book management, reviews, top-rated listings, and API key authentication."
+    },
+    {
+      "name": "Amana Marketing Dashboard",
+      "techStack": "Next.js, Tailwind CSS",
+      "date": "2026",
+      "description": "Developed an analytics dashboard that visualizes campaign performance, demographics, and geographic data."
+    },
+    {
+      "name": "Amana Transportation System",
+      "techStack": "Next.js, Leaflet.js",
+      "date": "2026",
+      "description": "Created a real-time public transportation tracking system showing bus routes, passenger occupancy, and arrival times."
     }
   ],
   "education": [
@@ -69,7 +100,8 @@
     "programmingLanguages": ["Python", "JavaScript", "C++", "C#", "Java", "SQL"],
     "backend": ["ASP.NET Core", "Node.js", "REST API", "Kafka", "H2 In-Memory", "Entity Framework", "MongoDB"],
     "mobile": ["Android", "Flutter"],
-    "tools": ["Git & GitHub", "JSON", "Kafka", "Photoshop", "Canva"]
+    "tools": ["Git & GitHub", "JSON", "Kafka", "Photoshop", "Canva"],
+    "frameworks": ["Next.js", "Express.js", "Tailwind CSS", "React.js"]
   },
   "certifications": [
     {
@@ -136,7 +168,12 @@
       "title": "ASP.NET Core foundations",
       "provider": "Udemy",
       "url": "https://www.udemy.com/certificate/UC-ba0c8641-0e08-4368-b756-c0c40372d9a9/"
-    }
+    },
+    {
+    "title": "Fullstack Development Bootcamp",
+    "provider": "Amana Bootcamp",
+    "url": "https://verified.sertifier.com/en/verify/41526587300718/"
+  }
   ],
   "languages": [
     { "language": "Arabic", "proficiency": "Native" },
@@ -148,5 +185,20 @@
       "Ramadan Clash Competition (IEEE An-Najah)",
       "10-Day Ramadan Coding Marathon (IEEE AAUP)"
     ]
+  },
+"openSource": [
+  {
+    "name": "Quran Apps Directory Contribution",
+    "url": "https://github.com/myarnwas/quran-apps-directory",
+    "language": "Python",
+    "date": "Mar 2026",
+    "description": "Implemented error handling and added an App Not Found (404) state."
+  },
+  {
+    "name": "Pull Request – Quran Apps Directory",
+    "url": "https://github.com/Itqan-community/quran-apps-directory/pulls",
+    "date": "Mar 2026",
+    "description": "Created a pull request that introduced improved error handling and missing 404 state."
   }
+]
 }

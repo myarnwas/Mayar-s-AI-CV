@@ -64,7 +64,35 @@ def build_context(data: dict) -> str:
             parts.append(f"- {p.get('name', '')} ({p.get('url', '')})")
             parts.append(f"  {p.get('description', '')}")
         parts.append("")
+    open_source = data.get("openSource") or []
+    if open_source:
+        parts.append("## Open Source Contributions")
+        for c in open_source:
+            name = c.get("name", "")
+            url = c.get("url", "")
+            date = c.get("date", "")
+            language = c.get("language", "")
+            desc = c.get("description", "")
 
+            header = f"- {name}"
+            if date:
+                header += f" ({date})"
+            if url:
+                header += f" - {url}"
+
+            parts.append(header)
+
+            meta = []
+            if language:
+                meta.append(f"Language: {language}")
+
+            if meta:
+                parts.append("  " + ", ".join(meta))
+
+            if desc:
+                parts.append(f"  {desc}")
+
+        parts.append("")
     education = data.get("education") or []
     if education:
         parts.append("## Education")
