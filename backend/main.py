@@ -4,8 +4,8 @@ from dotenv import load_dotenv
 from fastapi import Body, FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
-from backend.ask_service import answer_question
-from backend.load_data import load_data
+from ask_service import answer_question
+from load_data import load_data
 
 _load_env = os.path.join(os.path.dirname(__file__), ".env")
 load_dotenv(_load_env)

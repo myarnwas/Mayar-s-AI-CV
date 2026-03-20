@@ -1,25 +1,8 @@
-# Welcome to Mayar-s-AI-CV 👋
+# personal-ai-cv
 
-[![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen.svg)](https://mayar-ai-cv-1.onrender.com/)
+Interactive AI CV assistant: chat with an AI that knows your experience, skills, education, and projects. Ask questions and get answers backed by your CV data.
 
-> Interactive AI CV assistant: chat with an AI that knows your experience, skills, education, and projects. Ask questions and get answers backed by your CV data.
-
-## 🏠 Homepage
-
-[Visit Demo](https://mayar-ai-cv.onrender.com)
-
----
-
-## Features ✨
-
-- Fully interactive AI-powered CV assistant
-- Answers questions using your uploaded CV data
-- Maintains context with chat history
-- Supports both text and voice input
-
----
-
-## Tech Stack 🛠️
+## Stack
 
 - **Frontend:** Next.js, React, TypeScript  
 - **Backend:** FastAPI, Python (LLM powered via Groq)  
@@ -83,16 +66,21 @@ Open [http://localhost:3000](http://localhost:3000). The app expects the API at 
 - **Backend:** Copy `backend/.env.example` to `backend/.env` and set `GROQ_API_KEY`.
 - **Frontend:** Optional `NEXT_PUBLIC_SITE_URL` for OG image URL; optional `NEXT_PUBLIC_API_URL` if the API is not on the same host.
 
+## Deploy on Render
 
-## Author
+1. Push this repo to GitHub and connect it in [Render](https://render.com).
+2. Create a **Blueprint** from the repo; Render will read `render.yaml` and create two web services (API + frontend).
+3. Set environment variables in the Render dashboard:
+   - **personal-ai-cv-api:** `GROQ_API_KEY` (secret), `CORS_ORIGINS` = your frontend URL (e.g. `https://personal-ai-cv-web.onrender.com`).
+   - **personal-ai-cv-web:** `NEXT_PUBLIC_API_URL` = your API URL (e.g. `https://personal-ai-cv-api.onrender.com`), optionally `NEXT_PUBLIC_SITE_URL` = frontend URL for OG tags.
+4. Deploy. The API runs from the repo root (so `backend.main:app` works); the frontend uses `frontend` as the root directory.
 
-👤 **Mayar Waleed Nawas**
+## OG image
 
+To regenerate the social share image:
 
-## Show your support
+```bash
+cd frontend && npm run og-image
+```
 
-Give a ⭐️ if this project helped you!
-
-
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
+This builds `frontend/public/og-image.png` from `frontend/public/og-image.svg`.
