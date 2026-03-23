@@ -379,6 +379,7 @@ body::before {
 .qq-btn:nth-child(6) { animation-delay: 0.6s; }
 .qq-btn:nth-child(7) { animation-delay: 0.65s; }
 .qq-btn:nth-child(8) { animation-delay: 0.7s; }
+.qq-btn:nth-child(9) { animation-delay: 0.7s; }
 
 @keyframes qqIn {
   from {

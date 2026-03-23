@@ -95,7 +95,7 @@ export default function Home() {
     }
   };
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://personal-ai-cv.onrender.com';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://mayar-ai-cv-1.onrender.com';
   const ogImageUrl = `${siteUrl}/og-image.png`;
 
   const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -171,7 +171,7 @@ export default function Home() {
                 className={`msg ${msg.role}`}
                 style={{ animationDelay: `${i * 0.04}s` }}
               >
-                <div className={`msg-av ${msg.role}`}>{msg.role === 'ai' ? 'MK' : '👤'}</div>
+                <div className={`msg-av ${msg.role}`}>{msg.role === 'ai' ? 'M N' : '👤'}</div>
                 <div className="msg-body">
                   <div className="bubble">
                     {msg.role === 'ai' ? (
@@ -186,7 +186,7 @@ export default function Home() {
 
             {loading && (
               <div className="msg ai">
-                <div className="msg-av ai">MK</div>
+                <div className="msg-av ai">M N</div>
                 <div className="msg-body">
                   <div className="typing-bubble">
                     <span />
@@ -223,7 +223,8 @@ export default function Home() {
                 { q: "What cloud technologies does Mayar know?", label: 'Cloud & DevOps' },
                 { q: 'Why should I hire Mayar?', label: 'Why Hire Me?' },
                 { q: 'How can I contact Mayar?', label: 'Contact Me' },
-              ].map(({ q, label }) => (
+               { q: "What open source contributions has Mayar made?", label: 'Open Source' },
+ ].map(({ q, label }) => (
                 <button
                   key={q}
                   type="button"
